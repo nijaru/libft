@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 20:21:14 by nrusso            #+#    #+#             */
-/*   Updated: 2018/11/28 21:15:16 by nrusso           ###   ########.fr       */
+/*   Created: 2018/11/28 21:08:10 by nrusso            #+#    #+#             */
+/*   Updated: 2018/11/28 21:15:01 by nrusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <libft.h>
 
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-int ft_isdigit(int n);
-
-#endif
+int		ft_isdigit(int c)
+{
+	return ('0' <= c && c <= '9');
+}
