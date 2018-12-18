@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev.c                                              :+:      :+:    :+:   */
+/*   reverse.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,21 +12,10 @@
 
 #   include <libft.h>
 
- void rev(char s[])
- {
-    int i; 
-    int j;
-    char c;
+char* reverse(char *buf, int i, int j)
+{
+	while (i < j)
+		swap(&buf[i++], &buf[j--]);
 
-    i = 0;
-    j = ft_strlen(s) - 1;
-
-    while (i < j) 
-    {
-         c = s[i];
-         s[i] = s[j];
-         s[j] = c;
-         i++;
-         j--;
-     }
- }
+	return (buf);
+}
