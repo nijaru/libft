@@ -79,6 +79,8 @@ void ft_putnbr_fd(int n, int fd);
 /* personal */
 int isupper(int c);
 int islower(int c);
+char* reverse(char* buffer, int i, int j);
+void	swap(char* a, char* b);
 
 /* list */
 typedef struct      s_list
