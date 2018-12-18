@@ -12,19 +12,19 @@
 
 #   include <libft.h>
 
- void itoa(int n, char s[])
- {
+char* itoa(int n, char s[])
+{
     int i;
     int sign;
 
     if ((sign = n) < 0)  /* record sign */
-         n = -n;          /* make n positive */
+        n = -n;          /* make n positive */
      i = 0;
      do {       /* generate digits in reverse order */
-         s[i++] = n % 10 + '0';   /* get next digit */
+        s[i++] = n % 10 + '0';   /* get next digit */
      } while ((n /= 10) > 0);     /* delete it */
      if (sign < 0)
-         s[i++] = '-';
+        s[i++] = '-';
      s[i] = '\0';
-     reverse(s);
- }
+     return (reverse(s, 0, ft_strlen(s)));
+}
