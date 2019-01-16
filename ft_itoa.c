@@ -10,21 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include <libft.h>
+#include <libft.h>
 
-char* itoa(int n, char s[])
+int     len(int n)
 {
     int i;
-    int sign;
 
-    if ((sign = n) < 0)  /* record sign */
-        n = -n;          /* make n positive */
-     i = 0;
-     do {       /* generate digits in reverse order */
-        s[i++] = n % 10 + '0';   /* get next digit */
-     } while ((n /= 10) > 0);     /* delete it */
-     if (sign < 0)
-        s[i++] = '-';
-     s[i] = '\0';
-     return (reverse(s, 0, ft_strlen(s)));
+	i = 1;
+	while (n /= 10)
+		++i;
+	return (i);
+}
+
+char    *ft_itoa(int n)
+{
+	char	*s;
+	int     l;
+	int     tmp;
+
+	l = len(n);
+	tmp = n;
+	if (n < 0)
+	{
+		tmp = -n;
+		++l;
+	}
+	if (!(s = ft_strnew(l)))
+		return (NULL);
+	s[--l] = tmp % 10 + '0';
+	while (tmp /= 10)
+		s[--l] = tmp % 10 + '0';
+	if (n < 0)
+		*(s + 0) = '-';
+	return (s);
 }
