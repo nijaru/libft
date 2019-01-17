@@ -17,6 +17,6 @@ size_t  strlen(const char* s)
     const char *p;
     
     p = s;
-    while (*s) ++s;
+    while (*(++s));
     return (s - p);
 }
