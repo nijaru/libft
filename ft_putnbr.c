@@ -14,18 +14,5 @@
 
 void	ft_putnbr(int nb)
 {
-	long num;
-
-	num = nb;
-	if (num < 0)
-	{
-		ft_putchar('-');
-		num = -num;
-	}
-    /* TODO check if else/if */
-	if (num >= 10)
-	{
-		ft_putnbr(num / 10);
-	}
-	ft_putchar(num % 10 + '0');
+    ft_putnbr_fd(n, 1);
 }
