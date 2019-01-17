@@ -36,7 +36,7 @@ char    *ft_itoa(int n)
 		++l;
 	}
 	if (!(s = ft_strnew(l)))
-		return (NULL);
+		return (0);
 	s[--l] = tmp % 10 + '0';
 	while (tmp /= 10)
 		s[--l] = tmp % 10 + '0';

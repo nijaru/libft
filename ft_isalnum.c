@@ -14,5 +14,5 @@
 
 int ft_isalnum(int c)
 {
-    return (isupper(c) || islower(c)) || ft_isdigit(c);
+    return (upper(c) || lower(c)) || ft_isdigit(c);
 }
