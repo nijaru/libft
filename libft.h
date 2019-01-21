@@ -77,8 +77,9 @@ void    ft_putendl_fd(char const *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
 
 /* personal */
-int     upper(int c);
-int     lower(int c);
+int     upper(char c);
+int     lower(char c);
+int     whitespace(char c);
 char    *reverse(char *buffer, int i, int j);
 void    swap(char *a, char *b);
 
