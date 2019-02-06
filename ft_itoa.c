@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#   include <libft.h>
 
 int     len(int n)
 {
@@ -37,10 +37,10 @@ char    *ft_itoa(int n)
 	}
 	if (!(s = ft_strnew(l)))
 		return (0);
-	s[--l] = tmp % 10 + '0';
+	s[--l] = tmp % 10 + 48;
 	while (tmp /= 10)
-		s[--l] = tmp % 10 + '0';
+		s[--l] = tmp % 10 + 48;
 	if (n < 0)
-		*(s + 0) = '-';
+		s[0] = '-';
 	return (s);
 }
