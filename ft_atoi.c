@@ -6,13 +6,13 @@
 /*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/27 21:32:41 by nrusso            #+#    #+#             */
-/*   Updated: 2018/08/28 22:33:21 by nrusso           ###   ########.fr       */
+/*   Updated: 2019/02/06 15:28:43 by nrusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#	include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int value;
 	int sign;
