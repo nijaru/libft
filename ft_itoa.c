@@ -12,35 +12,32 @@
 
 #   include <libft.h>
 
-int     len(int n)
+static void rev(char s[])
 {
-    int i;
+    int i, j;
+    char c;
 
-	i = 1;
-	while (n /= 10)
-		++i;
-	return (i);
+    for (i = 0, j = strlen(s)-1; i<j; i++, j--) {
+        c = s[i];
+        s[i] = s[j];
+        s[j] = c;
+    }
 }
 
-char    *ft_itoa(int n)
+void itoa(int n, char s[])
 {
-	char	*s;
-	int     l;
-	int     tmp;
+    int i, sign;
 
-	l = len(n);
-	tmp = n;
-	if (n < 0)
-	{
-		tmp = -n;
-		++l;
-	}
-	if (!(s = ft_strnew(l)))
-		return (0);
-	s[--l] = tmp % 10 + 48;
-	while (tmp /= 10)
-		s[--l] = tmp % 10 + 48;
-	if (n < 0)
-		s[0] = '-';
-	return (s);
+    if ((sign = n) < 0)
+        n = -n;
+    i = 0;
+    s[i++] = n % 10 + '0';
+    while ((n /= 10) > 0)
+    {
+        s[i++] = n % 10 + '0';
+    }
+    if (sign < 0)
+        s[i++] = '-';
+    s[i] = '\0';
+    rev(s);
 }
