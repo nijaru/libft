@@ -6,13 +6,13 @@
 /*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 21:20:47 by nrusso            #+#    #+#             */
-/*   Updated: 2018/11/28 21:23:11 by nrusso           ###   ########.fr       */
+/*   Updated: 2019/02/06 15:35:46 by nrusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#	include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return (upper(c) || lower(c)) || ft_isdigit(c);
+	return (upper(c) || lower(c)) || ft_isdigit(c);
 }
