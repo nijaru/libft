@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include <libft.h>
+#   include "libft.h"
 
 char* reverse(char *buf, int i, int j)
 {

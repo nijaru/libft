@@ -10,7 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include <libft.h>
+#   include "libft.h"
+
+static int digits(int n)
+{
+    int  i;
+    i = 1;
+    while(n /= 10)
+      i++;
+    return (i);
+}
 
 static void rev(char s[])
 {
@@ -24,7 +33,7 @@ static void rev(char s[])
     }
 }
 
-void itoa(int n, char s[])
+static void real_itoa(int n, char s[])
 {
     int i, sign;
 
@@ -40,4 +49,16 @@ void itoa(int n, char s[])
         s[i++] = '-';
     s[i] = '\0';
     rev(s);
+}
+
+char* ft_itoa(int n)
+{
+    char* s;
+
+    if ((s = ft_strnew(digits(n))))
+    {
+        real_itoa(n, s);
+        return s;
+    }
+    return 0;
 }
