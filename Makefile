@@ -13,7 +13,6 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 SRC = \
-# libc
 ft_memset.c \
 ft_bzero.c \
 ft_memcpy.c \
@@ -43,7 +42,6 @@ ft_isprint.c \
 ft_isdigit.c \
 ft_toupper.c \
 ft_tolower.c \
-# additional
 ft_memalloc.c \
 ft_memdel.c \
 ft_strnew.c \
@@ -68,10 +66,8 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
-# personal
 isupper.c \
 islower.c \
-# list
 ft_lstnew.c \
 ft_lstdelone.c \
 ft_lstdel.c \
@@ -84,16 +80,15 @@ OBJ = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	gcc $(CFLAGS) -I ./libft.h -c $(SRC)
+	ar rcs $(NAME) $(O)
+	ranlib $(NAME)
 
-$(OBJ): $(SRC)
-	cc $(CFLAGS) $(SRC)
-
-clean: rm $(OBJ)
-	rm $(SRC)
+clean:
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
