@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include <stddef.h>
+#	include <stddef.h>
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    unsigned char *p;
+	unsigned char *p;
 
-    p = 0;
-    *p = *(unsigned char*)s;
-    while (n--)
-        if (*p != (unsigned char)c)
-            p++;
-        else
-            return (p);
-    return (0);
+	p = 0;
+	*p = *(unsigned char*)s;
+	while (n--)
+		if (*p != (unsigned char)c)
+			p++;
+		else
+			return (p);
+	return (0);
 }

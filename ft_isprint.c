@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#	include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (32 <= c && c < 127);
+	return (32 <= c && c < 127);
 }

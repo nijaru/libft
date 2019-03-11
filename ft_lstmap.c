@@ -10,25 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#	include "libft.h"
 
-t_list  *ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 {
-    t_list	*head;
+	t_list	*head;
 	t_list	*i;
 
 	if (!lst)
 		return (0);
-    i = f(lst);
-    head = i;
-    while((lst = lst->next))
-    {
-        if(!(lst->next = f(lst)))
-        {
-            free(lst->next);
-            return (0);
-        }
-        lst = lst->next;
-    }
-    return (head);
+	i = f(lst);
+	head = i;
+	while ((lst = lst->next))
+	{
+		if (!(lst->next = f(lst)))
+		{
+			free(lst->next);
+			return (0);
+		}
+		lst = lst->next;
+	}
+	return (head);
 }

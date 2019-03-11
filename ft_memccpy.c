@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#	include "libft.h"
 
-void    *ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-    char *dp;
-    char *sp;
+	char *dp;
+	char *sp;
 
-    dp = 0;
-    sp = 0;
-    *dp = (char)dst;
-    *sp = (char)src;
-    while (n-- && *sp != c)
-        *dp++ = *sp++;
-    if (!n)
-    {
-        *dp++ = *sp++; 
-        return (dp);
-    }
-    return (0);
+	dp = 0;
+	sp = 0;
+	*dp = (char)dst;
+	*sp = (char)src;
+	while (n-- && *sp != c)
+		*dp++ = *sp++;
+	if (!n)
+	{
+		*dp++ = *sp++;
+		return (dp);
+	}
+	return (0);
 }
