@@ -12,13 +12,14 @@
 
 #	include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(const char *dest, const char *src)
 {
-	char* ret;
+	char *ret;
 
 	ret = dest;
 	while (*dest)
 		dest++;
-	while ((*dest++ = *src++));
+	while (*src)
+		(*dest++ = *src++);
 	return (ret);
 }
