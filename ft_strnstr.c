@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-char    *strnstr(const char *haystack, const char *needle, size_t len)
+char	*strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t	n;
+	size_t	n;
 	int		lastresult;
 
 	if (!*needle)
@@ -22,7 +22,7 @@ char    *strnstr(const char *haystack, const char *needle, size_t len)
 	n = ft_strlen(needle);
 	lastresult = 1;
 	while (n <= len && !*haystack &&
-            (lastresult = ft_strncmp(haystack, needle, n)))
+			(lastresult = ft_strncmp(haystack, needle, n)))
 	{
 		--len;
 		++haystack;

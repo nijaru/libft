@@ -5,46 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 13:01:14 by nrusso            #+#    #+#             */
-/*   Updated: 2018/08/27 20:17:27 by nrusso           ###   ########.fr       */
+/*   Created: 2018/10/23 23:06:12 by nrusso            #+#    #+#             */
+/*   Updated: 2019/02/08 15:55:32 by nrusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-char    **ft_strsplit(char const *s, char c)
+static char		**arr_join(char **str, char *word)
 {
-    int len;
-    int count;
-    int i;
-    int j;
-    char **arr;
-    char **base;
+	char	**old;
+	char	**new;
+	int		i;
 
-    len = 0;
-    count = 0;
-    i = 0;
-    j = 0;
-    arr = 0;
-    base = 0;
-    while(*(s++)) {
-        if (*s == c) count++;
-        len++;
-    }
-    s -= (len + 1);
-    arr = (char **)malloc(sizeof(char *) * (len + 1));
-    base = arr;
-    while (i < (count + 1)) {
-        j = 0;
-        while(s[j] != c) ++j;
-        ++j;
-        *arr = (char *)malloc(sizeof(char) * j);
-        memcpy(*arr, s, (j-1));
-        (*arr)[j-1] = '\0';
-        s += j;
-        ++arr;
-        ++i;
-    }
-    *arr = 0;
-    return (base);
+	old = str;
+	new = 0;
+	i = 0;
+	while (old[i])
+		i++;
+	if ((new = (char **)malloc(sizeof(char *) * (i + 2))))
+	{
+		i = -1;
+		while (old[++i])
+			new[i] = old[i];
+		new[i++] = word;
+		new[i] = 0;
+	}
+	free(str);
+	return (new);
+}
+
+static int		wordlen(char const *str, char d)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] && str[i] != d)
+		i++;
+	return (i);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**n;
+	int		len;
+
+	if (!s || !(n = (char **)malloc(sizeof(char *))))
+		return (0);
+	*n = 0;
+	while (*s)
+	{
+		if (*s && *s != c)
+		{
+			len = wordlen(s, c);
+			n = arr_join(n, ft_strndup(s, (size_t)len));
+			s += len;
+		}
+		else
+			s++;
+	}
+	return (n);
 }
