@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include <stddef.h>
+#include <stddef.h>
 
-size_t  ft_strlen(const char* s)
+size_t	ft_strlen(const char *s)
 {
-    const char *p;
-    
-    p = s;
-    while (*(++s));
-    return (s - p);
+	const char *p;
+
+	p = s;
+	while (*s)
+		++s;
+	return (s - p);
 }

@@ -10,16 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-char *ft_strncat(char *dst, const char *src, size_t n)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-    char *tmp = dst;
-    while (*dst)
-        dst++;
-    while (n--)
-        if (!(*dst++ = *src++))
-            return tmp;
-    *dst = 0;
-    return tmp;
+	char *tmp;
+
+	tmp = dst;
+	while (*dst)
+		dst++;
+	while (n--)
+		if (!(*dst++ = *src++))
+			return (tmp);
+	*dst = 0;
+	return (tmp);
 }
