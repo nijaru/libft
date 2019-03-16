@@ -58,7 +58,7 @@ char			**ft_strsplit(char const *s, char c)
 		if (*s && *s != c)
 		{
 			len = wordlen(s, c);
-			n = arr_join(n, ft_strndup(s, (size_t)len));
+			n = arr_join(n, ft_strdup(s));
 			s += len;
 		}
 		else
