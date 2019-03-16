@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-int upper(char c)
+int	upper(char c)
 {
 	if ('A' <= c && c <= 'Z')
 		return (1);

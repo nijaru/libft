@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-int whitespace(char c)
+int	whitespace(char c)
 {
 	if (c == 32 || c == '\t' || c == '\n')
 		return (1);

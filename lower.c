@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-int lower(char c)
+int	lower(char c)
 {
 	if ('a' <= c && c <= 'z')
 		return (1);
