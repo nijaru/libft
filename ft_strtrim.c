@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#   include "libft.h"
+#include "libft.h"
 
-char    *ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
-    char const *sp;
+	char const *sp;
 
 	if (!s)
 		return (0);
