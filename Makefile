@@ -66,8 +66,11 @@ SRC = \
 ./ft_putstr_fd.c \
 ./ft_putendl_fd.c \
 ./ft_putnbr_fd.c \
-./isupper.c \
-./islower.c \
+./upper.c \
+./lower.c \
+./reverse.c \
+./swap.c \
+./whitespace.c \
 ./ft_lstnew.c \
 ./ft_lstdelone.c \
 ./ft_lstdel.c \
@@ -81,7 +84,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	gcc $(CFLAGS) -I ./libft.h -c $(SRC)
-	ar rcs $(NAME) $(O)
+	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
