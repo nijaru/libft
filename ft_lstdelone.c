@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#	include "libft.h"
+#include "libft.h"
 
 void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	if (!alst || !*alst)
-		return ;
-	if (!del)
+	if (alst && *alst)
+	{
 		del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = 0;
+		free(*alst);
+		*alst = 0;
+	}
 }
