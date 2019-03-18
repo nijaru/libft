@@ -22,8 +22,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 	tmp = f(lst);
 	head = ft_lstnew(tmp->content, f(tmp)->content_size);
 	if (!head)
-		return 0;
-
+		return (0);
 	while (lst->next)
 	{
 		lst = lst->next;
