@@ -14,7 +14,5 @@
 
 int	lower(char c)
 {
-	if ('a' <= c && c <= 'z')
-		return (1);
-	return (0);
+	return ('a' <= c && c <= 'z');
 }

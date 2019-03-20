@@ -14,7 +14,5 @@
 
 int	upper(char c)
 {
-	if ('A' <= c && c <= 'Z')
-		return (1);
-	return (0);
+	return ('A' <= c && c <= 'Z');
 }
