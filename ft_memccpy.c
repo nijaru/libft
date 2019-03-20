@@ -21,6 +21,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	sp = (char*)src;
 	while (n-- && *sp != c)
 		*dp++ = *sp++;
+	if (*sp == c)
+		return (0);
 	if (!n)
 	{
 		*dp++ = *sp++;
