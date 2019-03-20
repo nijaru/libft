@@ -17,10 +17,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	char *dp;
 	char *sp;
 
-	dp = 0;
-	sp = 0;
-	*dp = (char)dst;
-	*sp = (char)src;
+	dp = (char*)dst;
+	sp = (char*)src;
 	while (n-- && *sp != c)
 		*dp++ = *sp++;
 	if (!n)
