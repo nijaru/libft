@@ -21,19 +21,12 @@ int	ft_atoi(const char *str)
 	sign = 1;
     while(whitespace(*str))
         ++str;
-	while (*str)
+	if (*str == '-')
+		sign = -1;
+	while (*str && ft_isdigit(*str))
 	{
-		if (*str == '-')
-			sign = -1;
-		if (ft_isdigit(*str))
-		{
-			value *= 10;
-			value += (*str - '0');
-		}
-		else if (value)
-		{
-			break ;
-		}
+		value *= 10;
+		value += (*str - '0');
 		++str;
 	}
 	return (value * sign);
