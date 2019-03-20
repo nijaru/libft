@@ -19,8 +19,10 @@ int	ft_atoi(const char *str)
 
 	value = 0;
 	sign = 1;
-    while(whitespace(*str))
+    while (whitespace(*str))
+	{
         ++str;
+	}
 	if (*str == '-')
 		sign = -1;
 	while (*str && ft_isdigit(*str))
