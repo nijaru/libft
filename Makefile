@@ -10,9 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror
-SRC = \
+NAME=libft.a
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror
+SOURCES=\
 ./ft_memset.c \
 ./ft_bzero.c \
 ./ft_memcpy.c \
@@ -78,12 +79,12 @@ SRC = \
 ./ft_lstiter.c \
 ./ft_lstmap.c
 
-OBJ = $(SRC:%.c=%.o)
+OBJ = $(SOURCES:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc $(CFLAGS) -I ./libft.h -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SOURCES)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
