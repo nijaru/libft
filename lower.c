@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	lower(char c)
+int	lower(int c)
 {
 	return ('a' <= c && c <= 'z');
 }

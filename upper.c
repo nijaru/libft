@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	upper(char c)
+int	upper(int c)
 {
 	return ('A' <= c && c <= 'Z');
 }
