@@ -30,7 +30,10 @@ char		*ft_itoa(int n)
 	int		c;
 
 	v = n;
-	i = (n < 0) ? digits(n) + 1 : digits(n);
+	if (n < 0)
+        i = digits(n) + 1;
+    else
+        i = digits(n);
 	if ((s = ft_strnew(i)))
 	{
 		while (i--)
