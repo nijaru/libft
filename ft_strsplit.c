@@ -38,11 +38,18 @@ static char		**arr_join(char **str, char *word)
 static int		wordlen(char const *str, char d)
 {
 	int		i;
+	int		l;
 
 	i = 0;
+	l = 0;
+	while (str[i] == d)
+		++i;
 	while (str[i] && str[i] != d)
-		i++;
-	return (i);
+	{
+		++i;
+		++l;
+	}
+	return (l);
 }
 
 char			**ft_strsplit(char const *s, char c)
