@@ -31,13 +31,9 @@ char		*ft_itoa(int n)
 
 	v = n;
 	if (n < 0)
-	{
-        i = digits(n) + 1;
-	}
-    else
-	{
-        i = digits(n);
-	}
+		i = digits(n) + 1;
+	else
+		i = digits(n);
 	if ((s = ft_strnew(i)))
 	{
 		while (i--)

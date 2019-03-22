@@ -20,5 +20,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	if (p)
 		return (memcpy(dst, src, p - src + 1) + (p - src + 1));
 	memcpy(dst, src, n);
-	return 0;
+	return (0);
 }
