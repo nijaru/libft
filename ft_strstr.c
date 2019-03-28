@@ -16,6 +16,8 @@ char	*ft_strstr(const char *s1, const char *s2)
 {
 	size_t n;
 
+	if (!*s2)
+		return ((char*)s1);
 	n = ft_strlen(s2);
 	while (*s1)
 		if (!ft_memcmp(s1++, s2, n))
