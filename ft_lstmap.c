@@ -15,12 +15,15 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*head;
+	t_list	*tmp;
 
-	head = lst;
-	while (lst)
+	head = f(lst);
+	tmp = head;
+	while (lst->next)
 	{
-		lst = f(lst);
 		lst = lst->next;
+		tmp->next = f(lst);
+		tmp = tmp->next;
 	}
 	return (head);
 }
