@@ -19,9 +19,9 @@ char	*ft_strrchr(const char *s, int c)
 
 	c = (unsigned char)c;
 	if (!c)
-		return (strchr(s, 0));
+		return (ft_strchr(s, 0));
 	found = 0;
-	while ((p = strchr(s, c)))
+	while ((p = ft_strchr(s, c)))
 	{
 		found = p;
 		s = p + 1;
