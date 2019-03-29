@@ -38,18 +38,11 @@ static char		**arr_join(char **str, char *word)
 static int		wordlen(char const *str, char d)
 {
 	int		i;
-	int		l;
 
 	i = 0;
-	l = 0;
-	while (str[i] == d)
-		++i;
 	while (str[i] && str[i] != d)
-	{
 		++i;
-		++l;
-	}
-	return (l);
+	return (i);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -57,7 +50,10 @@ char			**ft_strsplit(char const *s, char c)
 	char	**n;
 	int		len;
 
-	if (!s || !(n = (char **)malloc(sizeof(char *))))
+	if (!s)
+		return (0);
+	n = (char **)malloc(sizeof(char *));
+	if (!n)
 		return (0);
 	*n = 0;
 	while (*s)
@@ -65,7 +61,7 @@ char			**ft_strsplit(char const *s, char c)
 		if (*s && *s != c)
 		{
 			len = wordlen(s, c);
-			n = arr_join(n, ft_strdup(s));
+			n = arr_join(n, ft_strsub(s, 0, len));
 			s += len;
 		}
 		else
