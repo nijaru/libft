@@ -10,9 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+MAKEFLAGS=-j
 NAME=libft.a
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -O0 -g0
 SOURCES=\
 ./ft_memset.c \
 ./ft_bzero.c \
