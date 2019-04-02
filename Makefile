@@ -10,7 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-MAKEFLAGS=-j
 NAME=libft.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -O0 -g0
@@ -41,7 +40,6 @@ SOURCES=\
 ./ft_isalnum.c \
 ./ft_isascii.c \
 ./ft_isprint.c \
-./ft_isdigit.c \
 ./ft_toupper.c \
 ./ft_tolower.c \
 ./ft_memalloc.c \
@@ -85,9 +83,11 @@ OBJ = $(SOURCES:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -c $(SOURCES)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+$(OBJ): $(SOURCES)
+	$(CC) $(CFLAGS) -c $(SOURCES)
 
 clean:
 	rm -rf $(OBJ)
