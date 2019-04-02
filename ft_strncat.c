@@ -14,14 +14,12 @@
 
 char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	char *tmp;
+	char *s;
+	size_t slen;
 
-	tmp = dst;
-	while (*dst)
-		dst++;
-	while (n--)
-		if (!(*dst++ = *src++))
-			return (tmp);
-	*dst = 0;
-	return (tmp);
+	s = dst;
+	slen = ft_strnlen(src, n);
+	dst[slen] = 0;
+	ft_memcpy(dst, src, slen);
+	return (s);
 }
