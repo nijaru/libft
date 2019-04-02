@@ -14,13 +14,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *result;
+	char *s;
 
-	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (result)
+	if (!s1 || !s2)
+		return (0);
+	s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (s)
 	{
-		ft_strcpy(result, s1);
-		ft_strcat(result, s2);
+		s = ft_strcpy(s, s1);
+		s = ft_strcat(s, s2);
 	}
-	return (result);
+	return (s);
 }
