@@ -12,7 +12,7 @@
 
 NAME=libft.a
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -O0 -g0
+CFLAGS=-Wall -Wextra -Werror -O0 -g0 -pipe
 SOURCES=\
 ./ft_memset.c \
 ./ft_bzero.c \
