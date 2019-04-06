@@ -11,22 +11,21 @@
 # **************************************************************************** #
 
 NAME=libft.a
-CFLAGS=-Wall -Wextra -Werror -O0 -g0 -pipe
+CFLAGS=-Wall -Wextra -Werror -pipe
 SOURCES=*.c
 OBJ=*.o
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) -c $(SOURCES)
+	$(CC) $(CFLAGS) -c $(SOURCES)
 	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
