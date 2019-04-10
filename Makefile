@@ -12,13 +12,13 @@
 
 NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror -pipe
-SOURCES=*.c
-OBJ=*.o
+SRC=$(wildcard *.c)
+OBJ=$(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SOURCES)
+	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
@@ -29,4 +29,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: all clean fclean re
