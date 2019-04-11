@@ -10,22 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS=-Wall -Wextra -Werror -pipe
-LIB=libft.a
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
 
-all: $(LIB)
-
-$(LIB):
-	$(CC) $(CFLAGS) -c $(SOURCES)
-	ar rcs $(LIB) $(OBJECTS)
+all:
+	$(CC) -Wall -Wextra -Werror -pipe -c $(SOURCES)
+	ar rcs libft.a $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS)
 
 fclean: clean
-	$(RM) $(LIB)
+	$(RM) libft.a
 
 re: fclean all
 
