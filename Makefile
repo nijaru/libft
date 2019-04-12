@@ -15,7 +15,7 @@ OBJECTS=$(SOURCES:.c=.o)
 
 all: libft.a
 
-libft.a: 
+libft.a:
 	cc -Wall -Wextra -Werror -pipe -c $(SOURCES)
 	ar rcs libft.a $(OBJECTS)
 
