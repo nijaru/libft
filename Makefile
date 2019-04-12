@@ -10,20 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME=libft.a
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
 
-all: libft.a
+all: $(NAME)
 
-libft.a:
+$(NAME):
 	cc -Wall -Wextra -Werror -pipe -c $(SOURCES)
-	ar rcs libft.a $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS)
 
 fclean: clean
-	$(RM) libft.a
+	$(RM) $(NAME)
 
 re: fclean all
 
