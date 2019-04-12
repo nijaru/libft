@@ -13,8 +13,10 @@
 SOURCES=$(wildcard *.c)
 OBJECTS=$(SOURCES:.c=.o)
 
-all:
-	$(CC) -Wall -Wextra -Werror -pipe -c $(SOURCES)
+all: libft.a
+
+libft.a: 
+	cc -Wall -Wextra -Werror -pipe -c $(SOURCES)
 	ar rcs libft.a $(OBJECTS)
 
 clean:
