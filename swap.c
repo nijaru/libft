@@ -1,18 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:11:50 by nrusso            #+#    #+#             */
-/*   Updated: 2018/11/28 21:16:14 by nrusso           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// From what I've read recently, the branch in the XOR solution can incur higher
+// costs than just using a temp variable. Modern compilers and hardware are
+// smart enough so keep it simple.
+//
+// old code:
+// if (a != b) {
+// 	*a = *a ^ *b;
+// 	*b = *a ^ *b;
+// 	*a = *b ^ *a;
+// }
 
-void	swap(char *a, char *b)
-{
-	*a = *a ^ *b;
-	*b = *a ^ *b;
-	*a = *b ^ *a;
+void swap(char *a, char *b) {
+  char *tmp = a;
+  a = b;
+  b = tmp;
 }
