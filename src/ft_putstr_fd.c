@@ -1,18 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 12:51:35 by nrusso            #+#    #+#             */
-/*   Updated: 2018/08/27 13:00:35 by nrusso           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "libft.h"
 
-#	include "libft.h"
-
-void	ft_putstr_fd(char const *s, int fd)
-{
-	write(fd, s, ft_strlen(s));
-}
+void ft_putstr_fd(char const *s, int fd) { write(fd, s, ft_strlen(s)); }

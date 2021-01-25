@@ -10,7 +10,7 @@
 // }
 
 void swap(char *a, char *b) {
-  char *tmp = a;
+  char *t = a;
   a = b;
-  b = tmp;
+  b = t;
 }

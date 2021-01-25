@@ -1,20 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nrusso <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:11:50 by nrusso            #+#    #+#             */
-/*   Updated: 2018/11/28 21:16:14 by nrusso           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-char	*reverse(char *buf, int i, int j)
-{
-	while (i < j)
-		swap(&buf[i++], &buf[j--]);
-	return (buf);
+char *reverse(char *buf, int i, int j) {
+  while (i < j) swap(&buf[i++], &buf[j--]);
+  return (buf);
 }
