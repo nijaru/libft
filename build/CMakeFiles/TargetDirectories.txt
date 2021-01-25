@@ -1,0 +1,3 @@
+/Users/nick/github/libft/build/CMakeFiles/rebuild_cache.dir
+/Users/nick/github/libft/build/CMakeFiles/edit_cache.dir
+/Users/nick/github/libft/build/CMakeFiles/ft.dir
